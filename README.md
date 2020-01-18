@@ -1,11 +1,9 @@
  网址导航
 ===
 
-本项目这是一个**纯静态**的网址导航网站。项目基于bootstrap前端框架开发。
-
-![](http://www.webstack.cc/assets/images/preview.gif)
-
 这是一个开源的公益项目，你可以拿来制作自己的网址导航，也可以做与导航无关的网站
+
+本项目这是一个**纯静态**的网址导航网站。项目基于bootstrap前端框架开发。
 
 怎么用?
 ---
@@ -33,7 +31,7 @@ Docker部署版本:https://hub.docker.com/r/arvon2014/webstack-laravel
 开源地址：[https://www.seogo.me/muban/webstack.html](https://www.seogo.me/muban/webstack.html)
 
 #### 方法7. 自己写后台系统
-可以按照自己的喜好和框架搭建后台系统，也可以参考我设计好的后台框架自行搭建。
+可以按照自己的喜好和框架搭建后台系统。
 
 JUST DOWNLOAD AND DO WHAT THE FUCK YOU WANT TO.
 
