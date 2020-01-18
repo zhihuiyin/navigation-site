@@ -3,7 +3,7 @@
 
 这是一个开源的公益项目，你可以拿来制作自己的网址导航，也可以做与导航无关的网站
 
-本项目这是一个**纯静态**的网址导航网站。项目基于bootstrap前端框架开发。
+本项目这是一个**纯静态**的网址导航网站,基于bootstrap前端框架开发。
 
 怎么用?
 ---
@@ -33,11 +33,4 @@ Docker部署版本:https://hub.docker.com/r/arvon2014/webstack-laravel
 #### 方法7. 自己写后台系统
 可以按照自己的喜好和框架搭建后台系统。
 
-JUST DOWNLOAD AND DO WHAT THE FUCK YOU WANT TO.
-
-Copyright © 2017-2018 **[webstack.cc](https://webstack.cc)** Released under the **MIT License**.
-
 > 注：本项目开源地址https://github.com/WebStackPage/WebStackPage.github.io
-
-Screenshot 📷
-
