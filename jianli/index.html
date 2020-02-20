@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>前端个人简历</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="plugs/fullPage/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="plugs/wow/animate.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- 视差图片3d翻转效果插件 -->
+    <link rel="stylesheet" href="plugs/parallaxPic3dreversal/css/htmleaf-demo.css">
+    <link rel="stylesheet" href="plugs/parallaxPic3dreversal/css/style.css">
+    <link rel="stylesheet" href="plugs/particles/style.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?e3250739e64b39084d3e47088d181242";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script> -->
+    <script src="lib/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="lib/jquery.min.js">\x3C/script>')
+    </script>
+    <script src="plugs/fullPage/jquery.fullPage.js"></script>
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" href="./css/ie.css">
+    <![endif]-->
+    <script>
+        window.onload = function () {
+            document.getElementById('homelink').click();
+        }
+    </script>
+    <style>
+        .slide-one .left img {
+            width: 30%;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .slide-four .left img {
+            width: 30%;
+            float: left;
+            margin-left: 18px;
+        }
+
+        .slide-two .left img{
+            width: 30%;
+            float: left;
+            margin-left: 18px;
+        }
+
+        #demo {
+            letter-spacing: .1rem;
+            font-size: 2rem;
+            line-height: 5rem;
+        }
+    </style>
+    <style id="__web-inspector-hide-shortcut-style__" type="text/css">
+        .__web-inspector-hide-shortcut__,
+        .__web-inspector-hide-shortcut__ *,
+        .__web-inspector-hidebefore-shortcut__::before,
+        .__web-inspector-hideafter-shortcut__::after {
+            visibility: hidden !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="menu-container" class="">
+        <div class="logo">
+            <i class="fa fa-free-code-camp" aria-hidden="true"></i>
+        </div>
+        <ul id="menu">
+            <li data-menuanchor="page1" class="active">
+                <a id="homelink" href="#page1">首页</a>
+            </li>
+            <li data-menuanchor="page2">
+                <a href="#page2">专业技能</a>
+            </li>
+            <li data-menuanchor="page3">
+                <a href="#page3">案例简介</a>
+            </li>
+            <li data-menuanchor="page4">
+                <a href="#page4">联系方式</a>
+            </li>
+        </ul>
+    </div>
+    <div id="fullpage">
+        <div class="section" id="home">
+            <div class="cicle">
+                <div class="profile animate rollIn long delay5"></div>
+            </div>
+            <div class="introduction">
+                <p id="demo">
+                </p>
+                <script>
+                    // var str = '未来已来,只是尚未流行 — 凯文·凯利';
+                    var str1 = '想像力比知识更重要，因为知识是有限的，而想像力概括着世界上的一切，推动着进步，并且是知识进化的源泉 - 爱因斯坦';
+                    // var str2 = '有时候，正是那些人们认为的无用之人，成就了无人所成之事 - 克利斯朵夫'
+                    var text = str1;//[str1,str2][Math.round(Math.random())]
+                    var i = 0;
+                    var timer;
+                    var apiUrl = 'http://api.tianapi.com/txapi/dictum/';
+                    var key = 'ffe21faa0ff935f7ff9f897dcb065271';
+                    $.get(apiUrl,{key:key},function(data) {
+                        console.log('data: ',data);
+                        var news = data.newslist[0];
+                        if(data.code == 200 && news){
+                            text = news.content + ' - ' + news.mrname;
+                        }
+                        timer = setInterval(scrollit, 100);
+                    });
+
+                    function scrollit() {
+                        $('#demo').html((text.slice(0, i++) + '  '));
+                        if (i > text.length) {
+                            clearInterval(timer);
+                        }
+                    }
+                </script>
+            </div>
+            <!-- 粒子插件 -->
+            <![if !IE]>
+            <div id="particles-js" style="min-height:600px;">
+            </div>
+            <!-- <script src="plugs/particles/particles.min.js"></script>
+            <script src="plugs/particles/app.js"></script> -->
+            <![endif]>
+            <div class="bg"></div>
+        </div>
+        <div class="section" id="action">
+            <![if !IE]>
+            <div class="wrapper">
+                <div class="cols">
+                    <div class="col_ action" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(img/6.jpg)">
+                                <div class="inner">
+                                    <div class="circleChart" id="2" data-value="0" style="position: relative;">
+                                        <canvas class="circleChart_canvas" width="200" height="200" style="margin:1rem 0 0 1.2rem; display: block;"></canvas>
+                                        <p class="circleChart_text" style="position: absolute; line-height: 170px; top: 0px; width: 100%; margin: 0px; padding: 0px; text-align: center; font-size: 28.5714px; font-weight: normal; font-family: sans-serif;">
+                                        </p>
+                                        <span>html5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back sec-native">
+                                <div class="inner">
+                                    <p>熟悉html5,css3新特性，能够处理主流浏览器兼容性问题</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col_ action delay" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(img/2.jpg)">
+                                <div class="inner">
+                                    <div class="circleChart" id="2" data-value="0" style="position: relative;">
+                                        <canvas class="circleChart_canvas" width="200" height="200" style="margin:1rem 0 0 1.2rem; display: block;"></canvas>
+                                        <p class="circleChart_text" style="position: absolute; line-height: 170px; top: 0px; width: 100%; margin: 0px; padding: 0px; text-align: center; font-size: 28.5714px; font-weight: normal; font-family: sans-serif;">
+                                        </p>
+                                        <span>css3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back sec-framework">
+                                <div class="inner">
+                                    <p>熟练jq及bootstrap开发响应式页面</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col_ action delay2" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(img/3.jpg)">
+                                <div class="inner">
+                                    <div class="circleChart" id="2" data-value="0" style="position: relative;">
+                                        <canvas class="circleChart_canvas" width="200" height="200" style="margin:1rem 0 0 1.2rem; display: block;"></canvas>
+                                        <p class="circleChart_text" style="position: absolute; line-height: 170px; top: 0px; width: 100%; margin: 0px; padding: 0px; text-align: center; font-size: 28.5714px; font-weight: normal; font-family: sans-serif;">
+                                        </p>
+                                        <span>javascript</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back sec-build">
+                                <div class="inner">
+                                    <p>熟练原生js及es6的语法,熟悉webpack等构建应用</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col_ action delay3" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(img/4.jpg)">
+                                <div class="inner">
+                                    <div class="circleChart" id="2" data-value="0" style="position: relative;">
+                                        <canvas class="circleChart_canvas" width="200" height="200" style="margin:1rem 0 0 1.2rem; display: block;"></canvas>
+                                        <p class="circleChart_text" style="position: absolute; line-height: 170px; top: 0px; width: 100%; margin: 0px; padding: 0px; text-align: center; font-size: 28.5714px; font-weight: normal; font-family: sans-serif;">
+                                        </p>
+                                        <span>vue</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back sec-server">
+                                <div class="inner">
+                                    <p>理解mvc开发思想,熟悉vue,react开发框架</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col_ action delay3" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(img/5.jpg)">
+                                <div class="inner">
+                                    <div class="circleChart" id="2" data-value="0" style="position: relative;">
+                                        <canvas class="circleChart_canvas" width="200" height="200" style="margin:1rem 0 0 1.2rem; display: block;"></canvas>
+                                        <p class="circleChart_text" style="position: absolute; line-height: 170px; top: 0px; width: 100%; margin: 0px; padding: 0px; text-align: center; font-size: 28.5714px; font-weight: normal; font-family: sans-serif;">
+                                        </p>
+                                        <span>小程序</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back sec-server">
+                                <div class="inner">
+                                    <p>熟练原生小程序开发,了解nodejs及koa2框架搭建服务器</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <![endif]>
+            <!--[if IE]>
+            <script>
+                $(function() {
+                    $('.skills ul').on('mouseenter', 'li', function(e) {
+                        $this = $(this);
+                        $this.children('.s-title').slideUp('slow', function() {
+                            $this.children('.s-content').slideDown('slow', function() {
+                            });
+                        });
+                    });
+                })
+            </script>
+            <div class="skills">
+                <ul>
+                    <li class="s-html5">
+                        <div class="s-title"><span>html5</span> <br><span>90%</span> </div>
+                        <p class="s-content">熟悉html5新增标签的使用,熟悉css3选择器,背景及动画的应用,理解css3盒子模型,熟练使用原生js操作DOM和AJAX</p>
+                    </li>
+                    <li class="s-css3">
+                        <div class="s-title"><span>css3</span> <br><span>90%</span> </div>
+                        <p class="s-content">熟练运用jquery操作DOM/AJAX,熟悉bootstrap制作响应式页面,理解MVC开发思想,熟悉Vuejs,Reactjs,Angularjs等框架</p>
+                    </li>
+                    <li class="s-javascript">
+                        <div class="s-title"><span>javascript</span> <br><span>90%</span> </div>
+                        <p class="s-content">熟悉sass等css预处理工具的使用,熟悉gulp进行压缩,打包,熟悉webpack等构建应用</p>
+                    </li>
+                    <li class="s-jquery">
+                        <div class="s-title"><span>jquery</span> <br><span>90%</span> </div>
+                        <p class="s-content">理解面向对象的编程思想,熟悉requirejs模块化开发,会使用git做代码管理,了解es6的语法</p>
+                    </li>
+                    <li class="s-bootstrap">
+                        <div class="s-title"><span>bootstrap</span> <br><span>90%</span> </div>
+                        <p class="s-content">熟悉服务器端nodejs的使用,可以用express框架搭建简单的服务器,熟悉数据库mongodb的使用</p>
+                    </li>
+                </ul>
+            </div>
+            <![endif]-->
+        </div>
+        <div class="section" id="slider">
+            <div class="slide">
+                <div class="slide-four">
+                    <div class="left">
+                        <img src="./img/miniapp_0.jpg" alt="">
+                        <img src="./img/miniapp_1.jpg" alt="">
+                        <img src="./img/miniapp_2.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <h4>天天口语秀小程序</h4>
+                        <h5>技术点 : </h5>原生小程序代码
+                        <h5>项目描述 :</h5>
+                        <p>一个帮助英语学习者提升口语和听力的小程序
+                            <br>整个项目做了分包改造，对许多代码做了封装和优化
+                        </p>
+                        <h5>项目收获 :</h5>
+                        <p>熟悉了小程序的接口使用及发布上线流程
+                        </p>
+                        <p>
+                            <h5>项目链接: 微信搜索阿卡索英语口语在线</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-one animate">
+                    <div class="left">
+                        <img src="./img/yougou-index.png" alt="">
+                        <img src="./img/yougou-sort.png" alt="">
+                        <img src="./img/yougou-salse.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h4>优购商城</h4>
+                        <h5>技术点: </h5>html5,css3,mint-ui,vue全家桶,git
+                        <h5>项目描述 :</h5>
+                        <p>移动web商城,项目基于vue全家桶和mint-ui开发
+                            <br>实现了首页,分类,限时抢购,购物车,个人中心等多个页面
+                        </p>
+                        <h5>项目收获 :</h5>
+                        <p>熟悉了vue全家桶和组件化开发
+                            <br>熟悉nodejs搭建简单服务器
+                        </p>
+                        <p>
+                            <h5>项目链接:
+                                <a href=" http://yinzhihui.site" target="_blank"> http://yinzhihui.site</a>
+                            </h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-two">
+                    <div class="left">
+                        <img src="./img/fdqw_0.jpg" alt="">
+                        <img src="./img/fdqw_1.jpg" alt="">
+                        <img src="./img/fdqw_2.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <h4>福豆趣玩小程序</h4>
+                        <h5>技术点 : </h5>原生小程序代码
+                        <h5>项目描述 :</h5>
+                        <p>一个转盘游戏小程序
+                            <br>前端后端分类，模块化开发，自定义组件
+                        </p>
+                        <h5>项目收获 :</h5>
+                        <p>熟练小程序自定义组件使用
+                            <br>熟练模块化开发，封装
+                        </p>
+                        <p>
+                            <h5>项目链接: 微信搜索福豆趣玩</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-three">
+                    <div class="left">
+                        <img src="./img/qqplayer.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h4>QQ影音官网</h4>
+                        <h5>技术点 : </h5>html5,css3,jquery
+                        <h5>项目描述 :</h5>
+                        <p>项目使用jquery实现页面交互，兼容ie8浏览器
+                            <br>在桌面和移动端都有较好的呈现
+                        </p>
+                        <h5>项目收获 :</h5>
+                        <p>熟悉原生js、jQuery及git的使用
+                            <br>熟悉页面兼容性处理
+                        </p>
+                        <p>
+                            <h5>项目链接:
+                                <a href="https://player.qq.com/" target="_blank">https://player.qq.com/</a>
+                            </h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section active">
+            <style>
+                .content {
+                    margin: 10rem auto 0rem;
+                    height: 2rem;
+                    color: white;
+                    font-weight: 300;
+                    font-size: 1.5rem;
+                    transition: all 2s ease;
+                }
+            </style>
+            <div class="content animate">
+                &nbsp;
+            </div>
+            <div class="contact">
+                <ul>
+                    <li class='animate write' data-text='15019457705'>
+                        <a href="#" class="fa fa-mobile fa-lg" aria-hidden="true"></a>
+                    </li>
+                    <li class='animate delay write' data-text='15019457705@163.com'>
+                        <a href="#" class="fa fa-envelope" aria-hidden="true"></a>
+                    </li>
+                    <li class='animate delay2 write' data-text='https://github.com/zhihuiyin'>
+                        <a href="#" class="fa fa-github fa-lg" aria-hidden="true"></a>
+                    </li>
+                    <li class='animate delay3 write' data-text='2235045160'>
+                        <a href="#" class="fa fa-weixin" aria-hidden="true"></a>
+                    </li>
+                    <!-- <li class='animate delay4 write' data-text='2235045160'>
+                        <a href="#" class="fa fa-qq" aria-hidden="true"></a>
+                    </li> -->
+                </ul>
+            </div>
+            <script>
+                var flag = true;
+                $('.write').mouseenter(function () {
+                    if(flag){
+                        var $text = $(this).attr('data-text');
+                        var k = 0;
+                        flag = false;
+                        var writer = setInterval(function () {
+                            $('.content').text(($text.slice(0, k++) + ''));
+                            if (k == $text.length + 1) {
+                                clearInterval(writer);
+                                flag = true;
+                            }
+                        }, Math.round(Math.random() * 100));
+                    }
+                });
+            </script>
+            <div class="gohome">
+                <img src="./img/rocket1.png" alt="">
+            </div>
+            <div class="copyright">
+                <!-- © Yinzhihui. Design. -->
+            </div>
+        </div>
+    </div>
+    <!-- 百分比插件 -->
+    <![if !IE]>
+    <script src="plugs/circleChart/dist/circleChart.min.js"></script>
+    <script src="plugs/flux/flux.min.js"></script>
+    <![endif]>
+    <script>
+        $(function () {
+            $('#fullpage').fullpage({
+                sectionsColor: ['#BCD0CE', '#005669', '#109085', '#348cb2'],
+                navigation: true,
+                loopBottom: true,
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                menu: '#menu',
+                afterLoad: function (anchorLink, index) {
+                    if (index == 1) {
+                        $('#menu').removeClass('active');
+
+                        $('#home p').addClass('animate');
+
+                        $('.slide-one').hide();
+
+                        $('.contact p').hide();
+                        $('.active h1').removeClass('fadeIn');
+                        $('.contact p').eq(0).removeClass('zoomInDown');
+                        $('.contact p').eq(1).removeClass('zoomIn');
+                        $('.contact p').eq(2).removeClass('zoomInUp');
+                    }
+                    if (index == 2) {
+                        if (!isIE()) {
+                            $('.action').addClass('riseTop animate');
+                            setTimeout(function () {
+                                $(".circleChart").circleChart({
+                                    size: 160,
+                                    value: 90,
+                                    color: "rgba(255,255,255,.8)",
+                                    backgroundColor: "rgba(255,255,255,0.5)",
+                                    text: 0,
+                                    onDraw: function (el, circle) {
+                                        circle.text(Math.round(circle.value) +
+                                            "%");
+                                    }
+                                });
+                            }, 1000);
+                        }
+                    }
+                    if (index == 3) {
+                        $('.slide-one').show().addClass('fadeInUp');
+                        if (isIE()) {
+                            $('.slide-one').fadeIn('slow');
+                        }
+                    }
+                    if (index == 4) {
+                        $('.contact ul').css('display', 'inline-block');
+                        $('.contact ul li').addClass('zoomInUp');
+                        // console.dir($('.contact ul li'));slideInUp,fadeInUp,zoomInUp
+                        // $('.contact ul li').eq(0).addClass('slideInUp');
+                    }
+                },
+                onLeave: function (index, nextIndex, direction) {
+                    if (index == 1) {
+                        $('#home p').removeClass('animate');
+                        $('#menu').addClass('active');
+                    }
+                    if (index == 2) {
+                        $('.action').removeClass('riseTop animate');
+                    }
+                    if (index == 3) {
+                        $('.slide-one').removeClass('fadeInUp').hide();
+                    }
+                    if (index == 4) {
+                        $('.contact ul li').removeClass('zoomInUp');
+                        $('.contact ul').css('display', 'none');
+                        setTimeout(() => {
+                            $('.content').html('');
+                        }, 1000);
+                    }
+                },
+
+            });
+            $('.gohome').click(function () {
+                $.fn.fullpage.moveTo(1, 0);
+            });
+
+            // 判断是不是ie浏览器
+            function isIE() {
+                if (!!window.ActiveXObject || "ActiveXObject" in window)
+                    return true;
+                else
+                    return false;
+            };
+        });
+    </script>
+    <!--[if lt IE 10]>
+        <script>
+            setTimeout(function() {
+            $(document).ready(function() {
+                if (confirm('您的浏览器版本太低了,请更新到最新版!')) {
+                    window.open("http://www.google.cn/chrome/browser/desktop/index.html");
+                }
+            });
+        }, 2500);
+        </script>
+    <![endif]-->
+    <script src="../commons/jsplugin.js"></script>
+    <!-- 友盟统计 -->
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278187545'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278187545' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>

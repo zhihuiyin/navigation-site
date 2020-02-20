@@ -1,0 +1,108 @@
+@charset "UTF-8";
+.animate {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animate.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.animate.hinge {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+.animate.long {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+}
+
+.animate.delay {
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+}
+
+.animate.delay2 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.animate.delay3 {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.animate.delay4 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+.animate.delay5 {
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+}
+
+@keyframes l2r {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate.l2r {
+    animation-name: l2r;
+}
+
+@keyframes riseHight {
+    0% {
+        transform: translateZ(0);
+    }
+    100% {
+        transform: translateZ(20px);
+    }
+}
+
+@keyframes riseTop {
+    from {}
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.riseTop {
+    animation: riseTop 1s ease forwards;
+}
+
+@keyframes left2right {
+    80% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.bounceInLeft.animate {
+    animation: left2right 1s ease forwards;
+}
+
+@keyframes right2left {
+    80% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.bounceInRight.animate {
+    animation: right2left 1s ease forwards;
+}
