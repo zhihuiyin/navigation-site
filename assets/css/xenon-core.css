@@ -2226,9 +2226,15 @@ footer.main-footer .footer-text {
     float: left
 }
 
+footer.main-footer .footer-copyright .text{
+    margin: 40px 0 0 200px;
+    color: black;
+    display: inline-block;
+}
+
 footer.main-footer .go-up {
     float: right;
-    margin-bottom: 20px
+    margin: 40px 0 0;
 }
 
 footer.main-footer .go-up a {
