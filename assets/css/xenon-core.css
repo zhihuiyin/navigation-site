@@ -928,6 +928,7 @@ body {
 }
 
 .sidebar-menu .logo-env .logo {
+    margin: 0 0 0 15px;
     float: left
 }
 
